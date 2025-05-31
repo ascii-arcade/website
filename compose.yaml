@@ -1,0 +1,6 @@
+services:
+  farkle:
+    build: .
+    ports:
+      - "81:81"
+    restart: always
