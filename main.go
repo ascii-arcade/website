@@ -25,10 +25,10 @@ func main() {
 ||                                                                              ||
 ++------------------------------------------------------------------------------++
 ++------------------------------------------------------------------------------++`)
-		sb.WriteString("\n```\n")
+		sb.WriteString("\n```")
 
-		sb.WriteString("\n\n# Welcome to the ASCII Arcade!\n\n")
-		sb.WriteString("## Available Games:\n\n")
+		sb.WriteString("\n\n# Welcome to the ASCII Arcade!")
+		sb.WriteString("\n\n## Available Games:\n")
 		sb.WriteString("- Farkle: `ssh ascii-arcade.games -p 2022`\n")
 
 		w.Header().Set("Content-Type", "text/plain")
