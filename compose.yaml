@@ -2,5 +2,5 @@ services:
   farkle:
     build: .
     ports:
-      - "81:81"
+      - "81:8081"
     restart: always
