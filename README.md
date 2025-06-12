@@ -20,3 +20,4 @@
 ## Available Games:
 
 - Farkle: `ssh ascii-arcade.games -p 2022`
+- Knucklebones: `ssh ascii-arcade.games -p 2023`
