@@ -21,3 +21,4 @@
 
 - Farkle: `ssh ascii-arcade.games -p 2022`
 - Knucklebones: `ssh ascii-arcade.games -p 2023`
+- Cards Against Humanity: `ssh ascii-arcade.games -p 2024`
