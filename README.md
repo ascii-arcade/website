@@ -17,6 +17,9 @@
 
 # Welcome to the ASCII Arcade!
 
+## Run a game with a script!
+`curl -s https://ascii-arcade.games/play | bash`
+
 ## Available Games:
 
 - Farkle: `ssh ascii-arcade.games -p 2022`

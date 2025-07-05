@@ -6,17 +6,27 @@ import (
 	"strings"
 )
 
-//go:embed README.md
+//go:embed README.md play.sh
 var page embed.FS
 
 func main() {
 	mux := http.NewServeMux()
 
 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		// read the markdown file
 		data, err := page.ReadFile("README.md")
 		if err != nil {
 			http.Error(w, "Failed to read README.md", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "text/plain")
+		w.Write(data)
+	})
+
+	mux.HandleFunc("/play", func(w http.ResponseWriter, r *http.Request) {
+		data, err := page.ReadFile("play.sh")
+		if err != nil {
+			http.Error(w, "Failed to read play.sh", http.StatusInternalServerError)
 			return
 		}
 
