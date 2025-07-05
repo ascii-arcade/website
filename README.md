@@ -18,7 +18,7 @@
 # Welcome to the ASCII Arcade!
 
 ## Run a game with a script!
-`curl -s https://ascii-arcade.games/play | bash`
+`/bin/bash -c "$(curl -fsSL https://ascii-arcade.games/play)"`
 
 ## Available Games:
 

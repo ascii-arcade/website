@@ -30,6 +30,7 @@ func main() {
 			http.Error(w, "Failed to read play.sh", http.StatusInternalServerError)
 			return
 		}
+
 		w.Header().Set("Content-Type", "text/plain")
 		w.Write(data)
 	})
