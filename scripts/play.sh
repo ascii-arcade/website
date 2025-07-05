@@ -27,6 +27,7 @@ if $USE_GUM; then
 
   for option in "${OPTIONS[@]}"; do
     if [[ "$SELECTED_GAME" == "${option%%|*}" ]]; then
+      GAME="${option%%|*}"
       PORT="${option#*|}"
       break
     fi

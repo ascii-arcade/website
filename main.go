@@ -6,8 +6,11 @@ import (
 	"strings"
 )
 
-//go:embed README.md play.sh
+//go:embed README.md
 var page embed.FS
+
+//go:embed scripts/*
+var scripts embed.FS
 
 func main() {
 	mux := http.NewServeMux()
@@ -23,16 +26,7 @@ func main() {
 		w.Write(data)
 	})
 
-	mux.HandleFunc("/play", func(w http.ResponseWriter, r *http.Request) {
-		data, err := page.ReadFile("play.sh")
-		if err != nil {
-			http.Error(w, "Failed to read play.sh", http.StatusInternalServerError)
-			return
-		}
-
-		w.Header().Set("Content-Type", "text/plain")
-		w.Write(data)
-	})
+	mux.HandleFunc("/scripts", http.FileServer(http.FS(scripts)).ServeHTTP)
 
 	if err := http.ListenAndServe(":8081", mux); err != nil {
 		panic(err)
