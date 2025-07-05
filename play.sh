@@ -23,14 +23,10 @@ if $USE_GUM; then
     GAMES+=("${option%%|*}")
   done
 
-  GAME=$(gum choose --cursor.foreground "#00ff00" --cursor.background "#000000" "${GAMES[@]}")
-  if [[ -z "$GAME" ]]; then
-    echo "No game selected. Exiting."
-    exit 0
-  fi
+  SELECTED_GAME=$(gum choose --cursor.foreground "#00ff00" --cursor.background "#000000" "${GAMES[@]}")
 
   for option in "${OPTIONS[@]}"; do
-    if [[ "$GAME" == "${option%%|*}" ]]; then
+    if [[ "$SELECTED_GAME" == "${option%%|*}" ]]; then
       PORT="${option#*|}"
       break
     fi
